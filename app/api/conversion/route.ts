@@ -16,7 +16,7 @@ export async function POST(request: Request) {
   };
 
   console.log("CONVERSION RECEIVED:", event);
-  const stats = storeEvent(event);
+  const stats = await storeEvent(event);
 
   return NextResponse.json({
     success: true,

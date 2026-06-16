@@ -2,13 +2,13 @@ import { calculateFunnel, markAsMoneyPages } from "@/lib/analytics/funnel";
 import { checkTrackingHealth } from "@/lib/analytics/debug-check";
 import { calculateMetrics } from "@/lib/analytics/realtime-metrics";
 import { realRevenue } from "@/lib/analytics/revenue-real";
-import { aggregateStats, readEvents } from "@/lib/analytics/store";
+import { aggregateStoredStats, readStoredEvents } from "@/lib/db/events";
 import { calculateRealRevenue } from "@/lib/monetization/revenue-tracker";
 import { classifyUserAgent } from "@/lib/traffic-detector";
 
-export default function RevenueDashboard() {
-  const stats = aggregateStats();
-  const events = readEvents();
+export default async function RevenueDashboard() {
+  const events = await readStoredEvents();
+  const stats = await aggregateStoredStats();
   const health = checkTrackingHealth(events);
   const metrics = calculateMetrics(events);
   const revenue = calculateRealRevenue(stats);

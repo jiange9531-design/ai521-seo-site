@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { isBot } from "@/lib/analytics/bot-filter";
-import { aggregateStats, readEvents, type AnalyticsEvent } from "@/lib/analytics/store";
-import { storeEvent } from "@/lib/db/events";
+import type { AnalyticsEvent } from "@/lib/analytics/store";
+import { aggregateStoredStats, hasDuplicateEvent, storeEvent } from "@/lib/db/events";
 import { detectTrafficSource } from "@/lib/traffic-detector";
 
 export const dynamic = "force-dynamic";
@@ -28,19 +28,7 @@ export async function POST(request: Request) {
   }
 
   const sessionId = body.sessionId ?? "anonymous";
-  const key = `${sessionId}-${body.type}-${body.page}`;
-  const duplicate = readEvents().some((event) => `${event.sessionId}-${event.type}-${event.page}` === key);
-
-  if (duplicate) {
-    console.log("EVENT DUPLICATE:", { key, body });
-    return NextResponse.json({
-      success: true,
-      duplicate: true,
-      received: body
-    });
-  }
-
-  const stats = storeEvent({
+  const event: AnalyticsEvent = {
     type: body.type,
     page: body.page,
     sessionId,
@@ -50,12 +38,24 @@ export async function POST(request: Request) {
     userAgent,
     referrer,
     trafficSource
-  });
+  };
+  const duplicate = await hasDuplicateEvent(event);
+
+  if (duplicate) {
+    console.log("EVENT DUPLICATE:", { event });
+    return NextResponse.json({
+      success: true,
+      duplicate: true,
+      received: body
+    });
+  }
+
+  const stats = await storeEvent(event);
   console.log("EVENT STORED:", {
     type: body.type,
     page: body.page,
     sessionId,
-    pipeline: `${body.type} -> json_store`
+    pipeline: `${body.type} -> persistent_store`
   });
 
   return NextResponse.json({
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
 }
 
 export async function GET() {
-  const stats = aggregateStats();
+  const stats = await aggregateStoredStats();
 
   return NextResponse.json({
     ok: true,
