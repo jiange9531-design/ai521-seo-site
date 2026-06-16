@@ -25,7 +25,7 @@ function generateAssessmentKeywords(slug: string, title: string) {
     `${title}训练`,
     `${title}怎么矫正`,
     "体态评估",
-    "体态纠正",
+    "体态矫正",
     "体态改善资料包",
     "免费体态测试",
     ...slugWords,
@@ -44,13 +44,49 @@ function getRelatedAssessments(slug: string, title: string, keywords: string[]) 
     .filter((item) => item.slug !== slug)
     .map((item) => {
       const itemTokens = [item.title, ...item.sections.keywords, ...item.slug.split("-")].filter(Boolean);
-      const score = itemTokens.reduce((total, token) => total + (currentTokens.has(token) ? 2 : keywords.some((keyword) => keyword.includes(token) || token.includes(keyword)) ? 1 : 0), 0);
+      const score = itemTokens.reduce(
+        (total, token) =>
+          total + (currentTokens.has(token) ? 2 : keywords.some((keyword) => keyword.includes(token) || token.includes(keyword)) ? 1 : 0),
+        0
+      );
 
       return { item, score };
     })
     .sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title, "zh-CN"))
     .slice(0, 3)
     .map(({ item }) => item);
+}
+
+function getSelfTests(title: string) {
+  return [
+    `拍一张自然站立侧面照，观察${title}相关位置是否明显偏离中线。`,
+    "记录肩颈、腰背或膝踝是否在久坐、站久、训练后更明显。",
+    "做一次轻柔动作测试，观察活动范围、紧张感和左右差异。"
+  ];
+}
+
+function getCommonMistakes() {
+  return [
+    "只做拉伸，不做稳定和控制训练。",
+    "动作幅度过大，训练后反而更酸、更紧。",
+    "忽略坐姿、屏幕高度、呼吸和日常动作习惯。"
+  ];
+}
+
+function getSuitablePeople(title: string) {
+  return [
+    `想先判断自己是否存在${title}相关体态问题的人。`,
+    "长期久坐、低头看手机、电脑办公或训练后容易酸胀的人。",
+    "希望获得基础动作清单和7天训练安排的人。"
+  ];
+}
+
+function getMedicalWarnings() {
+  return [
+    "出现麻木、放射痛、明显无力或夜间疼痛时，建议及时就医。",
+    "近期有外伤、手术史或症状快速加重时，不建议自行强行训练。",
+    "训练中疼痛持续升高，应停止动作并寻求专业评估。"
+  ];
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {
@@ -126,10 +162,10 @@ export default function AssessmentDetailPage({ params }: PageProps) {
           name: "体态评估中心"
         },
         about: pageKeywords.slice(0, 8),
-        articleSection: ["问题表现", "原因分析", "改善方案", "常见问题", "相关推荐"],
+        articleSection: ["问题表现", "常见原因", "自测方法", "改善动作", "常见错误", "适合人群", "什么时候需要就医"],
         potentialAction: {
           "@type": "CommunicateAction",
-          name: "添加微信领取体态资料包",
+          name: "添加微信领取7天体态改善训练表",
           target: "Wi985211DX"
         }
       },
@@ -148,14 +184,14 @@ export default function AssessmentDetailPage({ params }: PageProps) {
   };
 
   return (
-    <main className="mx-auto max-w-6xl px-5 py-12">
+    <main className="mx-auto max-w-6xl px-5 py-8 sm:py-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData)
         }}
       />
-      <article className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
+      <article className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
         <div>
           <nav className="text-sm text-ink/55">
             <a href="/assessment/">体态评估</a>
@@ -163,8 +199,8 @@ export default function AssessmentDetailPage({ params }: PageProps) {
             <span>{assessment.title}</span>
           </nav>
 
-          <h1 className="mt-5 text-4xl font-bold leading-tight text-ink">{assessment.title}评估：表现、原因与改善动作</h1>
-          <p className="mt-5 text-lg leading-8 text-ink/70">{assessment.description}</p>
+          <h1 className="mt-5 text-3xl font-black leading-tight text-ink sm:text-4xl">{assessment.title}：表现、原因与改善动作</h1>
+          <p className="mt-4 text-base leading-7 text-ink/70 sm:text-lg sm:leading-8">{assessment.description}</p>
           <div className="mt-5 flex flex-wrap gap-2">
             {pageKeywords.slice(0, 8).map((keyword) => (
               <span key={keyword} className="rounded-full border border-line bg-white px-3 py-1 text-xs font-medium text-ink/65">
@@ -173,35 +209,20 @@ export default function AssessmentDetailPage({ params }: PageProps) {
             ))}
           </div>
 
-          <section className="mt-10">
-            <h2 className="text-2xl font-bold text-ink">问题表现</h2>
-            <ul className="mt-4 space-y-3">
-              {assessment.sections.symptoms.map((item) => (
-                <li key={item} className="rounded-md border border-line bg-white p-4 text-ink/75">
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <DetailSection title="问题表现" items={assessment.sections.symptoms} />
+
+          <section className="mt-8">
+            <h2 className="text-2xl font-black text-ink">常见原因</h2>
+            <p className="mt-3 leading-7 text-ink/70">{assessment.sections.detail}</p>
+            <List items={assessment.sections.causes} />
           </section>
 
-          <section className="mt-10">
-            <h2 className="text-2xl font-bold text-ink">原因分析</h2>
-            <p className="mt-3 leading-7 text-ink/70">
-              {assessment.sections.detail}
-            </p>
-            <ul className="mt-4 space-y-3">
-              {assessment.sections.causes.map((item) => (
-                <li key={item} className="rounded-md border border-line bg-white p-4 text-ink/75">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
+          <DetailSection title="自测方法" items={getSelfTests(assessment.title)} />
 
-          <section className="mt-10">
-            <h2 className="text-2xl font-bold text-ink">改善方案</h2>
+          <section className="mt-8">
+            <h2 className="text-2xl font-black text-ink">改善动作</h2>
             <p className="mt-3 leading-7 text-ink/70">
-              建议先用低强度动作建立控制感，再逐步增加训练难度。每次训练前记录疼痛、活动度和姿势变化，避免只追求动作数量。对 Google 搜索用户来说，本页可以作为自查入口；对需要个性化判断的人群，建议通过微信发送照片和动作视频获取更明确的训练路径。
+              先用低强度动作建立控制感，再逐步增加训练难度。训练过程中记录疼痛、活动度和姿势变化，避免只追求次数。
             </p>
             <ol className="mt-4 space-y-3">
               {assessment.sections.actions.map((item, index) => (
@@ -213,8 +234,19 @@ export default function AssessmentDetailPage({ params }: PageProps) {
             </ol>
           </section>
 
-          <section className="mt-10">
-            <h2 className="text-2xl font-bold text-ink">常见问题</h2>
+          <DetailSection title="常见错误" items={getCommonMistakes()} />
+          <DetailSection title="适合人群" items={getSuitablePeople(assessment.title)} />
+          <DetailSection title="什么时候需要就医" items={getMedicalWarnings()} />
+
+          <section className="mt-8">
+            <h2 className="text-2xl font-black text-ink">免费领取7天训练方案</h2>
+            <div className="mt-4">
+              <CTAWeChat source={assessment.title} conversionScore={1} />
+            </div>
+          </section>
+
+          <section className="mt-8">
+            <h2 className="text-2xl font-black text-ink">常见问题</h2>
             <div className="mt-4 space-y-4">
               {assessment.sections.faqs.slice(0, 3).map((faq) => (
                 <section key={faq.question} className="rounded-lg border border-line bg-white p-5">
@@ -225,13 +257,8 @@ export default function AssessmentDetailPage({ params }: PageProps) {
             </div>
           </section>
 
-          <section className="mt-10 rounded-lg border border-line bg-white p-6">
-            <h2 className="text-2xl font-bold text-ink">CTA引流区块</h2>
-            <p className="mt-3 leading-7 text-ink/70">{assessment.sections.wechat}</p>
-          </section>
-
-          <section className="mt-10">
-            <h2 className="text-2xl font-bold text-ink">相关推荐</h2>
+          <section className="mt-8">
+            <h2 className="text-2xl font-black text-ink">相关推荐</h2>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {related.map((item) => (
                 <a key={item.slug} href={`/assessment/${item.slug}/`} className="rounded-lg border border-line bg-white p-5 transition hover:border-jade">
@@ -243,7 +270,7 @@ export default function AssessmentDetailPage({ params }: PageProps) {
           </section>
         </div>
 
-        <aside className="space-y-6">
+        <aside className="space-y-5">
           <CTAWeChat source={assessment.title} />
           <section className="rounded-lg border border-line bg-white p-5">
             <h2 className="text-lg font-bold text-ink">相关体态问题</h2>
@@ -258,5 +285,26 @@ export default function AssessmentDetailPage({ params }: PageProps) {
         </aside>
       </article>
     </main>
+  );
+}
+
+function DetailSection({ title, items }: { title: string; items: string[] }) {
+  return (
+    <section className="mt-8">
+      <h2 className="text-2xl font-black text-ink">{title}</h2>
+      <List items={items} />
+    </section>
+  );
+}
+
+function List({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-4 space-y-3">
+      {items.map((item) => (
+        <li key={item} className="rounded-md border border-line bg-white p-4 text-ink/75">
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }

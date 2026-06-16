@@ -6,10 +6,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "体态评估与纠正训练 | 免费领取改善资料包",
-    template: "%s | 体态评估与纠正训练"
+    default: "体态评估与矫正训练 | 免费领取改善资料包",
+    template: "%s | 体态评估与矫正训练"
   },
-  description: "提供头前伸、圆肩、骨盆前倾、翼状肩胛、膝内扣等体态问题评估与改善动作，并引导领取免费体态资料包。",
+  description:
+    "提供头前伸、圆肩、骨盆前倾、翼状肩胛、膝内扣等体态问题评估与改善动作，并引导领取免费体态资料包。",
   alternates: {
     canonical: "/"
   }
@@ -33,7 +34,7 @@ export default function RootLayout({
               <a href="/resources/">资料下载</a>
               <a href="/faq/">FAQ</a>
               <a href="/contact/" className="text-jade">
-                加微信
+                领取方案
               </a>
             </div>
           </nav>
@@ -41,8 +42,8 @@ export default function RootLayout({
         <PageViewTracker />
         {children}
         <footer className="border-t border-line bg-white">
-          <div className="mx-auto max-w-6xl px-5 py-8 text-sm text-ink/60">
-            <p>体态评估中心 | 微信：Wi985211DX | 免费体态评估与资料包领取</p>
+          <div className="mx-auto max-w-6xl px-5 py-6 text-sm text-ink/60">
+            <p>体态评估中心 | 微信：Wi985211DX | 免费体态自测与7天训练方案</p>
           </div>
         </footer>
       </body>
