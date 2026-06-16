@@ -1,5 +1,6 @@
 import CTAWeChat from "@/components/CTAWeChat";
 import { getAllAssessments } from "@/lib/assessment";
+import { defaultTopicImage, getTopicImage } from "@/lib/topic-images";
 
 const featuredCopy: Record<string, string> = {
   "001-neck-forward-how-to-correct":
@@ -98,6 +99,9 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-4">
+            <div className="overflow-hidden rounded-lg border border-line bg-white shadow-sm">
+              <img src={defaultTopicImage.src} alt={defaultTopicImage.alt} className="aspect-[3/2] w-full object-cover" />
+            </div>
             <div className="rounded-lg border border-line bg-white p-5 shadow-sm">
               <div className="flex items-center justify-between gap-4">
                 <div>
@@ -161,6 +165,7 @@ export default function HomePage() {
         <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((item, index) => (
             <a key={item.slug} href={`/assessment/${item.slug}/`} className="group rounded-lg border border-line bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-jade hover:shadow-md">
+              <img src={getTopicImage(item.slug, item.title).src} alt={getTopicImage(item.slug, item.title).alt} className="mb-4 aspect-[16/10] w-full rounded-md border border-line bg-mint object-cover" />
               <span className="rounded-full bg-mint px-3 py-1 text-xs font-bold text-jade">问题 {String(index + 1).padStart(2, "0")}</span>
               <h3 className="mt-4 text-lg font-black text-ink group-hover:text-jade">{item.title}</h3>
               <p className="mt-3 text-sm leading-6 text-ink/70">{featuredCopy[item.slug] ?? item.description}</p>

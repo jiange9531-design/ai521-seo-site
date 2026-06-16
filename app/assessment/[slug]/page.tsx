@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import CTAWeChat from "@/components/CTAWeChat";
 import { getAllAssessments, getAssessmentBySlug, getAssessmentSlugs } from "@/lib/assessment";
 import { getSiteUrl } from "@/lib/site";
+import { getTopicImage } from "@/lib/topic-images";
 
 type PageProps = {
   params: {
@@ -137,6 +138,7 @@ export default function AssessmentDetailPage({ params }: PageProps) {
 
   const pageKeywords = getPageKeywords(assessment.slug, assessment.title, assessment.sections.keywords);
   const related = getRelatedAssessments(assessment.slug, assessment.title, pageKeywords);
+  const topicImage = getTopicImage(assessment.slug, assessment.title);
   const baseUrl = getSiteUrl();
   const pageUrl = `${baseUrl}/assessment/${assessment.slug}/`;
   const structuredData = {
@@ -201,6 +203,7 @@ export default function AssessmentDetailPage({ params }: PageProps) {
 
           <h1 className="mt-5 text-3xl font-black leading-tight text-ink sm:text-4xl">{assessment.title}：表现、原因与改善动作</h1>
           <p className="mt-4 text-base leading-7 text-ink/70 sm:text-lg sm:leading-8">{assessment.description}</p>
+          <img src={topicImage.src} alt={topicImage.alt} className="mt-6 aspect-[16/9] w-full rounded-lg border border-line bg-mint object-cover shadow-sm" />
           <div className="mt-5 flex flex-wrap gap-2">
             {pageKeywords.slice(0, 8).map((keyword) => (
               <span key={keyword} className="rounded-full border border-line bg-white px-3 py-1 text-xs font-medium text-ink/65">
