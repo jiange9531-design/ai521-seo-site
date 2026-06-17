@@ -5,11 +5,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#17211b",
-        moss: "#315941",
-        jade: "#0f7a55",
-        mint: "#e7f4ed",
-        line: "#d9e6de"
+        ink: "#102033",
+        body: "#475569",
+        moss: "#0B3D91",
+        jade: "#1264D8",
+        mint: "#EEF5FF",
+        panel: "#F3F8FF",
+        line: "#D8E6FF",
+        accent: "#FFC928"
       }
     }
   },
