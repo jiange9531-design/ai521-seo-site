@@ -1,61 +1,61 @@
 export const siteImages = {
   hero: {
-    postureAssessment: "/images/hero/hero-posture-assessment.jpg"
+    postureAssessment: "/images/hero/hero-posture-assessment.png"
   },
 
   entry: {
-    problems: "/images/entry/entry-problems.jpg",
-    analysis: "/images/entry/entry-analysis.jpg",
-    training: "/images/entry/entry-training.jpg"
+    problems: "/images/entry/entry-problems.png",
+    analysis: "/images/entry/entry-analysis.png",
+    training: "/images/entry/entry-training.png"
   },
 
   services: {
-    postureCheck: "/images/services/service-posture-check.jpg",
-    neckShoulder: "/images/services/service-neck-shoulder.jpg",
-    pelvisLeg: "/images/services/service-pelvis-leg.jpg",
-    rehabTraining: "/images/services/service-rehab-training.jpg"
+    postureCheck: "/images/services/service-posture-check.png",
+    neckShoulder: "/images/services/service-neck-shoulder.png",
+    pelvisLeg: "/images/posture/posture-pelvic-tilt.png",
+    rehabTraining: "/images/services/service-rehab-training.png"
   },
 
   problems: {
-    forwardHead: "/images/problems/problem-forward-head.jpg",
-    roundedShoulder: "/images/problems/problem-rounded-shoulder.jpg",
-    pelvicTilt: "/images/problems/problem-pelvic-tilt.jpg",
-    scapularWinging: "/images/problems/problem-scapular-winging.jpg",
-    kneeValgus: "/images/problems/problem-knee-valgus.jpg",
-    highLowShoulder: "/images/problems/problem-high-low-shoulder.jpg",
-    neckStiffness: "/images/problems/problem-neck-stiffness.jpg"
+    forwardHead: "/images/problems/problem-forward-head.png",
+    roundedShoulder: "/images/problems/problem-rounded-shoulder.png",
+    pelvicTilt: "/images/posture/posture-pelvic-tilt.png",
+    scapularWinging: "/images/posture/posture-rounded-shoulder.png",
+    kneeValgus: "/images/posture/posture-knee-valgus.png",
+    highLowShoulder: "/images/posture/posture-high-low-shoulder.png",
+    neckStiffness: "/images/problems/problem-forward-head.png"
   },
 
   posture: {
-    forwardHead: "/images/posture/posture-forward-head.jpg",
-    roundedShoulder: "/images/posture/posture-rounded-shoulder.jpg",
-    pelvicTilt: "/images/posture/posture-pelvic-tilt.jpg",
-    scapularWinging: "/images/posture/posture-scapular-winging.jpg",
-    kneeValgus: "/images/posture/posture-knee-valgus.jpg",
-    highLowShoulder: "/images/posture/posture-high-low-shoulder.jpg",
-    neckStiffness: "/images/posture/posture-neck-stiffness.jpg"
+    forwardHead: "/images/posture/posture-forward-head.png",
+    roundedShoulder: "/images/posture/posture-rounded-shoulder.png",
+    pelvicTilt: "/images/posture/posture-pelvic-tilt.png",
+    scapularWinging: "/images/posture/posture-scapular-winging.png",
+    kneeValgus: "/images/posture/posture-knee-valgus.png",
+    highLowShoulder: "/images/posture/posture-high-low-shoulder.png",
+    neckStiffness: "/images/services/service-neck-shoulder.png"
   },
 
   resources: {
-    header: "/images/resources/resources-header.jpg",
-    assessmentForm: "/images/resources/resource-assessment-form.jpg",
-    sevenDayPlan: "/images/resources/resource-7day-plan.jpg",
-    exerciseList: "/images/resources/resource-exercise-list.jpg",
-    wechatTemplate: "/images/resources/resource-wechat-template.jpg"
+    header: "/images/hero/hero-posture-assessment.png",
+    assessmentForm: "/images/services/service-posture-check.png",
+    sevenDayPlan: "/images/services/service-rehab-training.png",
+    exerciseList: "/images/entry/entry-training.png",
+    wechatTemplate: "/images/entry/entry-analysis.png"
   },
 
   faq: {
-    header: "/images/faq/faq-header.jpg",
-    cta: "/images/faq/faq-cta.jpg"
+    header: "/images/entry/entry-analysis.png",
+    cta: "/images/services/service-neck-shoulder.png"
   },
 
   contact: {
-    wechat: "/images/contact/contact-wechat.jpg",
-    assessmentChat: "/images/contact/contact-assessment-chat.jpg"
+    wechat: "/images/entry/entry-analysis.png",
+    assessmentChat: "/images/services/service-posture-check.png"
   },
 
   cta: {
-    wechatPlan: "/images/cta/cta-wechat-plan.jpg"
+    wechatPlan: "/images/services/service-rehab-training.png"
   }
 } as const;
 

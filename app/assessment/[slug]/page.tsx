@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import CTAWeChat from "@/components/CTAWeChat";
 import { getAllAssessments, getAssessmentBySlug, getAssessmentSlugs } from "@/lib/assessment";
 import { getSiteUrl } from "@/lib/site";
-import { getAssessmentImageSrc } from "@/lib/site-images";
+import { getImageForTitle } from "@/lib/image-matcher";
 
 type PageProps = {
   params: {
@@ -96,7 +96,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const description = assessment.description;
   const pagePath = `/assessment/${assessment.slug}/`;
   const pageUrl = `${getSiteUrl()}${pagePath}`;
-  const imageSrc = getAssessmentImageSrc(assessment.slug, assessment.title);
+  const imageSrc = getImageForTitle(assessment.title, assessment.slug);
 
   return {
     title,
@@ -130,7 +130,7 @@ export default function AssessmentDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const imageSrc = getAssessmentImageSrc(assessment.slug, assessment.title);
+  const imageSrc = getImageForTitle(assessment.title, assessment.slug);
   const pageKeywords = getPageKeywords(assessment.slug, assessment.title, assessment.sections.keywords);
   const related = getRelatedAssessments(assessment.slug, assessment.title, pageKeywords);
   const pageUrl = `${getSiteUrl()}/assessment/${assessment.slug}/`;
@@ -246,7 +246,7 @@ export default function AssessmentDetailPage({ params }: PageProps) {
               <h2 className="text-2xl font-black text-ink">相关页面推荐</h2>
               <div className="mt-5 grid gap-4 md:grid-cols-3">
                 {related.map((item) => {
-                  const relatedImageSrc = getAssessmentImageSrc(item.slug, item.title);
+                  const relatedImageSrc = getImageForTitle(item.title, item.slug);
                   return (
                     <a
                       key={item.slug}

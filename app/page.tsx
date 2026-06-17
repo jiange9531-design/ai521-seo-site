@@ -1,7 +1,8 @@
 import SiteImage from "@/components/SiteImage";
 import CTAWeChat from "@/components/CTAWeChat";
 import { getAllAssessments } from "@/lib/assessment";
-import { getAssessmentImageSrc, siteImages } from "@/lib/site-images";
+import { getImageForTitle } from "@/lib/image-matcher";
+import { siteImages } from "@/lib/site-images";
 
 const featuredCopy: Record<string, string> = {
   "001-neck-forward-how-to-correct":
@@ -115,7 +116,7 @@ const postureCards = [
     title: "高低肩",
     desc: "左右肩线不平衡，常伴随颈肩紧张。",
     image: siteImages.problems.highLowShoulder,
-    href: "/assessment/017-shoulder-how-to-correct/"
+    href: "/assessment/high-low-shoulder/"
   }
 ];
 
@@ -296,7 +297,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-black text-ink">热门体态问题解析</h2>
           <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((item) => {
-              const imageSrc = getAssessmentImageSrc(item.slug, item.title);
+              const imageSrc = getImageForTitle(item.title, item.slug);
               return (
                 <a
                   key={item.slug}

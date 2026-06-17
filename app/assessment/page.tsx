@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SiteImage from "@/components/SiteImage";
 import CTAWeChat from "@/components/CTAWeChat";
 import { getAllAssessments } from "@/lib/assessment";
-import { getAssessmentImageSrc } from "@/lib/site-images";
+import { getImageForTitle } from "@/lib/image-matcher";
 
 export const metadata: Metadata = {
   title: "体态自测项目大全：头前伸、圆肩、骨盆前倾、膝内扣",
@@ -23,7 +23,7 @@ export default function AssessmentIndexPage() {
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {assessments.slice(0, 60).map((item) => {
-            const imageSrc = getAssessmentImageSrc(item.slug, item.title);
+            const imageSrc = getImageForTitle(item.title, item.slug);
             return (
               <a
                 key={item.slug}
