@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import SiteImage from "@/components/SiteImage";
 import { notFound } from "next/navigation";
 import CTAWeChat from "@/components/CTAWeChat";
 import { getAllAssessments, getAssessmentBySlug, getAssessmentSlugs } from "@/lib/assessment";
 import { getSiteUrl } from "@/lib/site";
-import { getTopicImage } from "@/lib/topic-images";
+import { getAssessmentImageSrc } from "@/lib/site-images";
 
 type PageProps = {
   params: {
@@ -96,7 +96,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const description = assessment.description;
   const pagePath = `/assessment/${assessment.slug}/`;
   const pageUrl = `${getSiteUrl()}${pagePath}`;
-  const image = getTopicImage(assessment.slug, assessment.title);
+  const imageSrc = getAssessmentImageSrc(assessment.slug, assessment.title);
 
   return {
     title,
@@ -112,13 +112,13 @@ export function generateMetadata({ params }: PageProps): Metadata {
       url: pageUrl,
       siteName: "每日运动解剖分享",
       locale: "zh_CN",
-      images: [{ url: image.src, alt: image.alt }]
+      images: imageSrc ? [{ url: imageSrc, alt: `${assessment.title}体态评估图片` }] : undefined
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [image.src]
+      images: imageSrc ? [imageSrc] : undefined
     }
   };
 }
@@ -130,7 +130,7 @@ export default function AssessmentDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const image = getTopicImage(assessment.slug, assessment.title);
+  const imageSrc = getAssessmentImageSrc(assessment.slug, assessment.title);
   const pageKeywords = getPageKeywords(assessment.slug, assessment.title, assessment.sections.keywords);
   const related = getRelatedAssessments(assessment.slug, assessment.title, pageKeywords);
   const pageUrl = `${getSiteUrl()}/assessment/${assessment.slug}/`;
@@ -152,7 +152,7 @@ export default function AssessmentDetailPage({ params }: PageProps) {
         headline: `${assessment.title}评估与改善方案`,
         description: assessment.description,
         url: pageUrl,
-        image: image.src,
+        image: imageSrc,
         inLanguage: "zh-CN",
         keywords: pageKeywords.join(", "),
         author: {
@@ -208,7 +208,14 @@ export default function AssessmentDetailPage({ params }: PageProps) {
             </div>
           </div>
           <div className="overflow-hidden rounded-3xl border border-line bg-white p-3 shadow-sm">
-            <Image src={image.src} alt={image.alt} width={900} height={620} priority className="h-full min-h-80 rounded-2xl object-cover" />
+            <SiteImage
+              src={imageSrc}
+              alt={`${assessment.title}体态评估图片`}
+              width={900}
+              height={620}
+              priority
+              className="h-full min-h-80 w-full rounded-2xl object-cover"
+            />
           </div>
         </section>
 
@@ -239,14 +246,20 @@ export default function AssessmentDetailPage({ params }: PageProps) {
               <h2 className="text-2xl font-black text-ink">相关页面推荐</h2>
               <div className="mt-5 grid gap-4 md:grid-cols-3">
                 {related.map((item) => {
-                  const relatedImage = getTopicImage(item.slug, item.title);
+                  const relatedImageSrc = getAssessmentImageSrc(item.slug, item.title);
                   return (
                     <a
                       key={item.slug}
                       href={`/assessment/${item.slug}/`}
                       className="group overflow-hidden rounded-2xl border border-line bg-white transition hover:-translate-y-1 hover:shadow-md"
                     >
-                      <Image src={relatedImage.src} alt={relatedImage.alt} width={900} height={620} className="aspect-[16/10] object-cover" />
+                      <SiteImage
+                        src={relatedImageSrc}
+                        alt={`${item.title}体态评估图片`}
+                        width={900}
+                        height={620}
+                        className="aspect-[16/10] w-full object-cover"
+                      />
                       <div className="p-4">
                         <h3 className="font-black text-ink group-hover:text-jade">{item.title}</h3>
                         <p className="mt-2 text-sm leading-6 text-body">{item.description}</p>

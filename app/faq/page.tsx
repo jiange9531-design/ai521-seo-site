@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import SiteImage from "@/components/SiteImage";
+import { siteImages } from "@/lib/site-images";
 
 export const metadata: Metadata = {
   title: "体态评估常见问题 FAQ",
@@ -20,8 +21,8 @@ export default function FAQPage() {
       <section className="mx-auto max-w-6xl px-5 py-12">
         <p className="text-sm font-black text-jade">FAQ</p>
         <h1 className="mt-3 text-4xl font-black text-ink">体态评估常见问题 FAQ</h1>
-        <Image
-          src="/images/faq/faq-header.jpg"
+        <SiteImage
+          src={siteImages.faq.header}
           alt="体态评估问题咨询与答疑"
           width={1200}
           height={720}
@@ -45,12 +46,12 @@ export default function FAQPage() {
         </div>
 
         <div className="mt-10 grid overflow-hidden rounded-3xl border border-line bg-white shadow-sm lg:grid-cols-[0.85fr_1.15fr]">
-          <Image
-            src="/images/faq/faq-support.jpg"
+          <SiteImage
+            src={siteImages.faq.cta}
             alt="体态评估问题答疑和咨询支持"
             width={900}
             height={560}
-            className="h-full min-h-64 object-cover"
+            className="h-full min-h-64 w-full object-cover"
           />
           <div className="p-6 lg:p-8">
             <h2 className="text-3xl font-black text-ink">还不确定自己属于哪类体态问题？</h2>

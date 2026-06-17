@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import SiteImage from "@/components/SiteImage";
+import { siteImages } from "@/lib/site-images";
 
 export const metadata: Metadata = {
   title: "体态改善训练方案",
@@ -10,19 +11,19 @@ const courses = [
   {
     title: "7天体态改善入门计划",
     desc: "适合刚开始自测的人，用7天建立肩颈、胸椎、骨盆和下肢的基础控制。",
-    image: "/images/services/service-rehab-training.jpg",
+    image: siteImages.services.rehabTraining,
     href: "/contact/"
   },
   {
     title: "肩颈体态改善专题",
     desc: "围绕头前伸、圆肩、肩颈僵硬，安排放松、激活和肩胛稳定训练。",
-    image: "/images/services/service-neck-shoulder.jpg",
+    image: siteImages.services.neckShoulder,
     href: "/assessment/001-neck-forward-how-to-correct/"
   },
   {
     title: "骨盆与下肢力线专题",
     desc: "针对骨盆前倾、膝内扣和站姿不稳，建立核心、臀腿和足弓控制。",
-    image: "/images/services/service-pelvis-leg.jpg",
+    image: siteImages.services.pelvisLeg,
     href: "/assessment/026-pelvic-tilt/"
   }
 ];
@@ -43,7 +44,7 @@ export default function CoursesPage() {
               href={course.href}
               className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
-              <Image src={course.image} alt={course.title} width={900} height={560} className="aspect-[16/10] object-cover" />
+              <SiteImage src={course.image} alt={course.title} width={900} height={560} className="aspect-[16/10] w-full object-cover" />
               <div className="p-6">
                 <h2 className="text-xl font-black text-ink group-hover:text-jade">{course.title}</h2>
                 <p className="mt-3 leading-7 text-body">{course.desc}</p>

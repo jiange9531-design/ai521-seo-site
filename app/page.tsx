@@ -1,7 +1,7 @@
-import Image from "next/image";
+import SiteImage from "@/components/SiteImage";
 import CTAWeChat from "@/components/CTAWeChat";
 import { getAllAssessments } from "@/lib/assessment";
-import { getTopicImage } from "@/lib/topic-images";
+import { getAssessmentImageSrc, siteImages } from "@/lib/site-images";
 
 const featuredCopy: Record<string, string> = {
   "001-neck-forward-how-to-correct":
@@ -33,21 +33,21 @@ const coreEntries = [
   {
     title: "热门体态问题",
     desc: "头前伸、圆肩、骨盆前倾、膝内扣、翼状肩胛等常见问题解析。",
-    image: "/images/entry/entry-problems.jpg",
+    image: siteImages.entry.problems,
     href: "/assessment/",
     button: "查看问题库"
   },
   {
     title: "运动解剖分析",
     desc: "从肌肉紧张、关节活动度、动作控制和日常姿势四个方向分析问题。",
-    image: "/images/entry/entry-analysis.jpg",
+    image: siteImages.entry.analysis,
     href: "/assessment/001-neck-forward-how-to-correct/",
     button: "查看分析"
   },
   {
     title: "改善训练指导",
     desc: "提供拉伸、激活、稳定和动作纠正建议，帮你建立正确训练顺序。",
-    image: "/images/entry/entry-training.jpg",
+    image: siteImages.entry.training,
     href: "/courses/",
     button: "查看训练方案"
   }
@@ -57,25 +57,25 @@ const services = [
   {
     title: "姿势评估",
     desc: "专业体态筛查与评估，精准定位问题。",
-    image: "/images/services/service-posture-check.jpg",
+    image: siteImages.services.postureCheck,
     href: "/assessment/"
   },
   {
     title: "肩颈改善",
     desc: "缓解肩颈紧张酸痛，改善圆肩头前伸。",
-    image: "/images/services/service-neck-shoulder.jpg",
+    image: siteImages.services.neckShoulder,
     href: "/assessment/001-neck-forward-how-to-correct/"
   },
   {
     title: "骨盆与下肢",
     desc: "纠正骨盆前倾后倾，改善下肢力线。",
-    image: "/images/services/service-pelvis-leg.jpg",
+    image: siteImages.services.pelvisLeg,
     href: "/assessment/026-pelvic-tilt/"
   },
   {
     title: "康复训练",
     desc: "定制训练方案，提升功能与运动表现。",
-    image: "/images/services/service-rehab-training.jpg",
+    image: siteImages.services.rehabTraining,
     href: "/courses/"
   }
 ];
@@ -84,37 +84,37 @@ const postureCards = [
   {
     title: "头前伸",
     desc: "颈椎压力增加，容易引发颈肩酸痛与头沉。",
-    image: "/images/problems/problem-forward-head.png",
+    image: siteImages.problems.forwardHead,
     href: "/assessment/001-neck-forward-how-to-correct/"
   },
   {
     title: "圆肩",
     desc: "影响呼吸与姿态美观，易出现肩颈酸痛。",
-    image: "/images/problems/problem-rounded-shoulder.png",
+    image: siteImages.problems.roundedShoulder,
     href: "/assessment/011-rounded-shoulder-how-to-improve/"
   },
   {
     title: "骨盆前倾",
     desc: "腰椎代偿、易导致腰酸，影响下肢发力。",
-    image: "/images/problems/problem-pelvic-tilt.png",
+    image: siteImages.problems.pelvicTilt,
     href: "/assessment/026-pelvic-tilt/"
   },
   {
     title: "翼状肩胛",
     desc: "肩胛稳定差，影响肩部功能与力量输出。",
-    image: "/images/problems/problem-scapular-winging.png",
+    image: siteImages.problems.scapularWinging,
     href: "/assessment/031-scapular-winging-how-to-improve/"
   },
   {
     title: "膝内扣",
     desc: "下肢力线异常，增加膝关节负担。",
-    image: "/images/problems/problem-knee-valgus.png",
+    image: siteImages.problems.kneeValgus,
     href: "/assessment/knee-valgus/"
   },
   {
     title: "高低肩",
     desc: "左右肩线不平衡，常伴随颈肩紧张。",
-    image: "/images/problems/problem-uneven-shoulder.png",
+    image: siteImages.problems.highLowShoulder,
     href: "/assessment/017-shoulder-how-to-correct/"
   }
 ];
@@ -168,13 +168,13 @@ export default function HomePage() {
 
           <div className="relative">
             <div className="overflow-hidden rounded-[24px] border border-line bg-white p-3 shadow-xl">
-              <Image
-                src="/images/hero/hero-posture-assessment.jpg"
+              <SiteImage
+                src={siteImages.hero.postureAssessment}
                 alt="体态评估师进行肩颈与站姿检查"
                 width={1400}
                 height={820}
                 priority
-                className="aspect-[4/3] rounded-[18px] object-cover"
+                className="aspect-[4/3] w-full rounded-[18px] object-cover"
               />
               <div className="mt-3 flex flex-wrap gap-2">
                 {["头前伸", "圆肩", "骨盆前倾", "肩胛稳定"].map((item) => (
@@ -258,7 +258,7 @@ export default function HomePage() {
                 href={item.href}
                 className="group overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
-                <Image src={item.image} alt={item.title} width={900} height={620} className="aspect-[16/10] object-cover" />
+                <SiteImage src={item.image} alt={item.title} width={900} height={620} className="aspect-[16/10] w-full object-cover" />
                 <div className="p-5">
                   <h3 className="text-xl font-black text-ink group-hover:text-jade">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-body">{item.desc}</p>
@@ -272,12 +272,12 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-5 py-12">
         <div className="grid overflow-hidden rounded-3xl border border-line bg-white shadow-sm lg:grid-cols-[0.92fr_1.08fr]">
-          <Image
-            src="/images/cta/cta-wechat-plan.jpg"
+          <SiteImage
+            src={siteImages.cta.wechatPlan}
             alt="领取7天体态改善训练计划"
             width={1000}
             height={620}
-            className="h-full min-h-64 object-cover"
+            className="h-full min-h-64 w-full object-cover"
           />
           <div className="p-6 lg:p-8">
             <h2 className="text-3xl font-black text-ink">添加微信，免费领取7天体态改善训练计划</h2>
@@ -296,14 +296,20 @@ export default function HomePage() {
           <h2 className="text-3xl font-black text-ink">热门体态问题解析</h2>
           <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((item) => {
-              const image = getTopicImage(item.slug, item.title);
+              const imageSrc = getAssessmentImageSrc(item.slug, item.title);
               return (
                 <a
                   key={item.slug}
                   href={`/assessment/${item.slug}/`}
                   className="group rounded-2xl border border-line bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
-                  <Image src={image.src} alt={image.alt} width={900} height={620} className="aspect-[16/10] rounded-xl object-cover" />
+                  <SiteImage
+                    src={imageSrc}
+                    alt={`${item.title}体态评估图片`}
+                    width={900}
+                    height={620}
+                    className="aspect-[16/10] w-full rounded-xl object-cover"
+                  />
                   <h3 className="mt-4 text-lg font-black text-ink group-hover:text-jade">{item.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-body">{featuredCopy[item.slug] ?? item.description}</p>
                 </a>
@@ -335,7 +341,7 @@ function ImageCardSection({
             href={item.href}
             className="group overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
           >
-            <Image src={item.image} alt={item.title} width={900} height={560} className="aspect-[16/10] object-cover" />
+            <SiteImage src={item.image} alt={item.title} width={900} height={560} className="aspect-[16/10] w-full object-cover" />
             <div className="p-5">
               <h3 className="text-xl font-black text-ink group-hover:text-jade">{item.title}</h3>
               <p className="mt-2 text-sm leading-6 text-body">{item.desc}</p>

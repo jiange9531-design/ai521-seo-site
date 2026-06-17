@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import SiteImage from "@/components/SiteImage";
 import CTAWeChat from "@/components/CTAWeChat";
+import { siteImages } from "@/lib/site-images";
 
 export const metadata: Metadata = {
   title: "体态改善资料包下载",
@@ -11,22 +12,22 @@ const resources = [
   {
     title: "体态自测表",
     desc: "用正面、侧面和背面三个角度，初步判断头前伸、圆肩、骨盆和下肢力线问题。",
-    image: "/images/resources/resource-self-test.jpg"
+    image: siteImages.resources.assessmentForm
   },
   {
     title: "7天改善训练表",
     desc: "按照放松、激活、稳定、动作整合的顺序，每天安排3到5个基础动作。",
-    image: "/images/resources/resource-seven-day-plan.jpg"
+    image: siteImages.resources.sevenDayPlan
   },
   {
     title: "基础拉伸激活动作",
     desc: "覆盖肩颈、胸椎、骨盆、臀腿和肩胛稳定的入门动作清单。",
-    image: "/images/resources/resource-movement-list.jpg"
+    image: siteImages.resources.exerciseList
   },
   {
     title: "微信评估模板",
     desc: "告诉你添加微信后如何发送照片和不适位置，方便获得更清晰的反馈。",
-    image: "/images/resources/resource-wechat-template.jpg"
+    image: siteImages.resources.wechatTemplate
   }
 ];
 
@@ -40,8 +41,8 @@ export default function ResourcesPage() {
           资料包包含体态自测表、7天改善训练表、基础动作清单和常见错误提醒。建议先完成自测，再选择对应动作。
         </p>
 
-        <Image
-          src="/images/resources/resources-header.jpg"
+        <SiteImage
+          src={siteImages.resources.header}
           alt="体态改善资料包、评估表和训练清单展示"
           width={1200}
           height={720}
@@ -56,7 +57,7 @@ export default function ResourcesPage() {
               href="/contact/"
               className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
-              <Image src={item.image} alt={item.title} width={900} height={620} className="aspect-[16/10] object-cover" />
+              <SiteImage src={item.image} alt={item.title} width={900} height={620} className="aspect-[16/10] w-full object-cover" />
               <div className="p-5">
                 <h2 className="text-xl font-black text-ink group-hover:text-jade">{item.title}</h2>
                 <p className="mt-3 text-sm leading-6 text-body">{item.desc}</p>
@@ -69,12 +70,12 @@ export default function ResourcesPage() {
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <Image
-            src="/images/cta/cta-wechat-plan.jpg"
+          <SiteImage
+            src={siteImages.cta.wechatPlan}
             alt="领取7天体态改善训练方案"
             width={1000}
             height={620}
-            className="rounded-3xl border border-line object-cover shadow-sm"
+            className="w-full rounded-3xl border border-line object-cover shadow-sm"
           />
           <CTAWeChat source="资料包下载页" conversionScore={1} />
         </div>

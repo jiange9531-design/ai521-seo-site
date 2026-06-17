@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import SiteImage from "@/components/SiteImage";
 import CTAWeChat from "@/components/CTAWeChat";
+import { siteImages } from "@/lib/site-images";
 
 export const metadata: Metadata = {
   title: "联系体态评估老师",
@@ -27,13 +28,20 @@ export default function ContactPage() {
           </div>
         </div>
         <div className="space-y-5">
-          <Image
-            src="/images/contact/contact-wechat.jpg"
+          <SiteImage
+            src={siteImages.contact.wechat}
             alt="添加微信领取体态改善方案"
             width={1000}
             height={620}
             priority
-            className="rounded-3xl border border-line object-cover shadow-sm"
+            className="w-full rounded-3xl border border-line object-cover shadow-sm"
+          />
+          <SiteImage
+            src={siteImages.contact.assessmentChat}
+            alt="体态评估老师沟通和个性化建议"
+            width={1000}
+            height={620}
+            className="w-full rounded-3xl border border-line object-cover shadow-sm"
           />
           <CTAWeChat source="联系转化页" conversionScore={1} />
         </div>
