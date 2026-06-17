@@ -11,22 +11,22 @@ const resources = [
   {
     title: "体态自测表",
     desc: "用正面、侧面和背面三个角度，初步判断头前伸、圆肩、骨盆和下肢力线问题。",
-    image: "/images/posture/posture-forward-head.jpg"
+    image: "/images/resources/resource-self-test.jpg"
   },
   {
     title: "7天改善训练表",
     desc: "按照放松、激活、稳定、动作整合的顺序，每天安排3到5个基础动作。",
-    image: "/images/services/service-training.jpg"
+    image: "/images/resources/resource-seven-day-plan.jpg"
   },
   {
     title: "基础拉伸激活动作",
     desc: "覆盖肩颈、胸椎、骨盆、臀腿和肩胛稳定的入门动作清单。",
-    image: "/images/services/service-neck-shoulder.jpg"
+    image: "/images/resources/resource-movement-list.jpg"
   },
   {
     title: "微信评估模板",
     desc: "告诉你添加微信后如何发送照片和不适位置，方便获得更清晰的反馈。",
-    image: "/images/services/service-posture-check.jpg"
+    image: "/images/resources/resource-wechat-template.jpg"
   }
 ];
 
@@ -39,6 +39,15 @@ export default function ResourcesPage() {
         <p className="mt-4 max-w-3xl text-lg leading-8 text-body">
           资料包包含体态自测表、7天改善训练表、基础动作清单和常见错误提醒。建议先完成自测，再选择对应动作。
         </p>
+
+        <Image
+          src="/images/resources/resources-header.jpg"
+          alt="体态改善资料包、评估表和训练清单展示"
+          width={1200}
+          height={720}
+          priority
+          className="mt-8 aspect-[16/7] w-full rounded-3xl border border-line object-cover shadow-sm"
+        />
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {resources.map((item) => (

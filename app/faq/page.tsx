@@ -20,6 +20,14 @@ export default function FAQPage() {
       <section className="mx-auto max-w-6xl px-5 py-12">
         <p className="text-sm font-black text-jade">FAQ</p>
         <h1 className="mt-3 text-4xl font-black text-ink">体态评估常见问题 FAQ</h1>
+        <Image
+          src="/images/faq/faq-header.jpg"
+          alt="体态评估问题咨询与答疑"
+          width={1200}
+          height={720}
+          priority
+          className="mt-8 aspect-[16/7] w-full rounded-3xl border border-line object-cover shadow-sm"
+        />
         <div className="mt-8 grid gap-4">
           {faqs.map(([question, answer], index) => (
             <section key={question} className="rounded-3xl border border-line bg-white p-6 shadow-sm">
@@ -38,8 +46,8 @@ export default function FAQPage() {
 
         <div className="mt-10 grid overflow-hidden rounded-3xl border border-line bg-white shadow-sm lg:grid-cols-[0.85fr_1.15fr]">
           <Image
-            src="/images/services/service-posture-check.jpg"
-            alt="体态评估咨询"
+            src="/images/faq/faq-support.jpg"
+            alt="体态评估问题答疑和咨询支持"
             width={900}
             height={560}
             className="h-full min-h-64 object-cover"

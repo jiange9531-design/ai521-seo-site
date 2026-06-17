@@ -33,21 +33,21 @@ const coreEntries = [
   {
     title: "热门体态问题",
     desc: "头前伸、圆肩、骨盆前倾、膝内扣、翼状肩胛等常见问题解析。",
-    image: "/images/services/service-posture-check.jpg",
+    image: "/images/entry/entry-problems.jpg",
     href: "/assessment/",
     button: "查看问题库"
   },
   {
     title: "运动解剖分析",
     desc: "从肌肉紧张、关节活动度、动作控制和日常姿势四个方向分析问题。",
-    image: "/images/services/service-anatomy.jpg",
+    image: "/images/entry/entry-analysis.jpg",
     href: "/assessment/001-neck-forward-how-to-correct/",
     button: "查看分析"
   },
   {
     title: "改善训练指导",
     desc: "提供拉伸、激活、稳定和动作纠正建议，帮你建立正确训练顺序。",
-    image: "/images/services/service-training.jpg",
+    image: "/images/entry/entry-training.jpg",
     href: "/courses/",
     button: "查看训练方案"
   }
@@ -75,7 +75,7 @@ const services = [
   {
     title: "康复训练",
     desc: "定制训练方案，提升功能与运动表现。",
-    image: "/images/services/service-training.jpg",
+    image: "/images/services/service-rehab-training.jpg",
     href: "/courses/"
   }
 ];
@@ -84,44 +84,38 @@ const postureCards = [
   {
     title: "头前伸",
     desc: "颈椎压力增加，容易引发颈肩酸痛与头沉。",
-    image: "/images/posture/posture-forward-head.jpg",
+    image: "/images/problems/problem-forward-head.png",
     href: "/assessment/001-neck-forward-how-to-correct/"
   },
   {
     title: "圆肩",
     desc: "影响呼吸与姿态美观，易出现肩颈酸痛。",
-    image: "/images/posture/posture-rounded-shoulder.jpg",
+    image: "/images/problems/problem-rounded-shoulder.png",
     href: "/assessment/011-rounded-shoulder-how-to-improve/"
   },
   {
     title: "骨盆前倾",
     desc: "腰椎代偿、易导致腰酸，影响下肢发力。",
-    image: "/images/posture/posture-pelvic-tilt.jpg",
+    image: "/images/problems/problem-pelvic-tilt.png",
     href: "/assessment/026-pelvic-tilt/"
   },
   {
     title: "翼状肩胛",
     desc: "肩胛稳定差，影响肩部功能与力量输出。",
-    image: "/images/posture/posture-scapular-winging.jpg",
+    image: "/images/problems/problem-scapular-winging.png",
     href: "/assessment/031-scapular-winging-how-to-improve/"
   },
   {
     title: "膝内扣",
     desc: "下肢力线异常，增加膝关节负担。",
-    image: "/images/posture/posture-knee-valgus.jpg",
+    image: "/images/problems/problem-knee-valgus.png",
     href: "/assessment/knee-valgus/"
   },
   {
     title: "高低肩",
     desc: "左右肩线不平衡，常伴随颈肩紧张。",
-    image: "/images/posture/posture-high-low-shoulder.jpg",
+    image: "/images/problems/problem-uneven-shoulder.png",
     href: "/assessment/017-shoulder-how-to-correct/"
-  },
-  {
-    title: "肩颈僵硬",
-    desc: "久坐、低头、压力大时更明显。",
-    image: "/images/posture/posture-neck-stiff.jpg",
-    href: "/assessment/009-neck-shoulder-how-to-release/"
   }
 ];
 

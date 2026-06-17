@@ -4,7 +4,7 @@ export type TopicImage = {
 };
 
 export const defaultTopicImage: TopicImage = {
-  src: "/images/hero/hero-posture-assessment.jpg",
+  src: "/images/posture/posture-general-assessment.jpg",
   alt: "体态评估与训练指导"
 };
 
@@ -34,7 +34,7 @@ const exactImages: Record<string, TopicImage> = {
     alt: "高低肩体态评估示意图"
   },
   "neck-stiffness": {
-    src: "/images/posture/posture-neck-stiff.jpg",
+    src: "/images/posture/posture-neck-stiffness.jpg",
     alt: "肩颈僵硬评估示意图"
   }
 };
@@ -51,6 +51,16 @@ const fuzzyImages: Record<string, TopicImage> = {
   scapular: exactImages["scapular-winging"]
 };
 
+const fallbackImages: TopicImage[] = [
+  exactImages["forward-head"],
+  exactImages["rounded-shoulder"],
+  exactImages["pelvic-tilt"],
+  exactImages["scapular-winging"],
+  exactImages["knee-valgus"],
+  exactImages["high-low-shoulder"],
+  exactImages["neck-stiffness"]
+];
+
 export function getTopicImage(slug: string, title = "") {
   if (exactImages[slug]) {
     return exactImages[slug];
@@ -59,5 +69,10 @@ export function getTopicImage(slug: string, title = "") {
   const text = `${slug} ${title}`.toLowerCase();
   const matchedKey = Object.keys(fuzzyImages).find((key) => text.includes(key));
 
-  return matchedKey ? fuzzyImages[matchedKey] : defaultTopicImage;
+  if (matchedKey) {
+    return fuzzyImages[matchedKey];
+  }
+
+  const hash = Array.from(text).reduce((total, char) => total + char.charCodeAt(0), 0);
+  return fallbackImages[hash % fallbackImages.length] ?? defaultTopicImage;
 }

@@ -28,10 +28,11 @@ export default function ContactPage() {
         </div>
         <div className="space-y-5">
           <Image
-            src="/images/cta/cta-wechat-plan.jpg"
+            src="/images/contact/contact-wechat.jpg"
             alt="添加微信领取体态改善方案"
             width={1000}
             height={620}
+            priority
             className="rounded-3xl border border-line object-cover shadow-sm"
           />
           <CTAWeChat source="联系转化页" conversionScore={1} />

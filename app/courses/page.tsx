@@ -10,7 +10,7 @@ const courses = [
   {
     title: "7天体态改善入门计划",
     desc: "适合刚开始自测的人，用7天建立肩颈、胸椎、骨盆和下肢的基础控制。",
-    image: "/images/services/service-training.jpg",
+    image: "/images/services/service-rehab-training.jpg",
     href: "/contact/"
   },
   {
