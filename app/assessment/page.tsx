@@ -1,57 +1,59 @@
 import type { Metadata } from "next";
-import SiteImage from "@/components/SiteImage";
-import CTAWeChat from "@/components/CTAWeChat";
-import { getAllAssessments } from "@/lib/assessment";
-import { getImageForTitle } from "@/lib/image-matcher";
+import Image from "next/image";
+import { getAllAssessments, getPageSEO } from "@/lib/assessment";
 
-export const metadata: Metadata = {
-  title: "体态自测项目大全：头前伸、圆肩、骨盆前倾、膝内扣",
-  description: "在线查看常见体态问题表现、原因与改善动作，包含头前伸、圆肩、骨盆前倾、翼状肩胛、膝内扣等评估页面。"
-};
+export function generateMetadata(): Metadata {
+  const seo = getPageSEO("assessmentIndex");
+  return {
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: seo.canonical }
+  };
+}
 
 export default function AssessmentIndexPage() {
   const assessments = getAllAssessments();
+  const topics = Array.from(new Set(assessments.flatMap((item) => item.tags)));
 
   return (
     <main className="bg-[linear-gradient(180deg,#eef5ff_0%,#ffffff_280px)]">
       <section className="mx-auto max-w-6xl px-5 py-12">
-        <p className="text-sm font-black text-jade">体态自测</p>
-        <h1 className="mt-3 text-4xl font-black leading-tight text-ink">体态自测项目大全</h1>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-body">
-          选择最接近你的问题，查看表现、常见原因、改善动作和注意事项，再领取对应的7天训练方案。
-        </p>
+        <p className="text-sm font-black text-jade">体态评估</p>
+        <h1 className="mt-3 text-4xl font-black leading-tight text-ink">常见体态问题静态评估指南</h1>
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-body">选择最接近你的问题，查看常见表现、形成原因、自查方法和基础改善建议。</p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          {[
+            ["01", "看表现", "了解常见姿势与动作表现"],
+            ["02", "看原因", "阅读可能的形成原因与注意事项"],
+            ["03", "看方法", "查看固定自查与改善内容"]
+          ].map(([number, title, text]) => (
+            <div key={number} className="rounded-2xl border border-line bg-white p-4 shadow-sm">
+              <span className="text-xs font-black text-jade">{number}</span>
+              <strong className="mt-1 block text-lg text-ink">{title}</strong>
+              <p className="mt-1 text-sm leading-6 text-body">{text}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {topics.map((topic) => <span key={topic} className="rounded-full border border-line bg-white px-4 py-2 text-sm font-bold text-jade">{topic}</span>)}
+        </div>
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {assessments.slice(0, 60).map((item) => {
-            const imageSrc = getImageForTitle(item.title, item.slug);
-            return (
-              <a
-                key={item.slug}
-                href={`/assessment/${item.slug}/`}
-                className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-              >
-                <SiteImage
-                  src={imageSrc}
-                  alt={`${item.title}体态评估图片`}
-                  width={900}
-                  height={620}
-                  className="aspect-[16/10] w-full object-cover"
-                />
-                <div className="p-5">
-                  <h2 className="text-xl font-black text-ink group-hover:text-jade">{item.title}</h2>
-                  <p className="mt-3 line-clamp-3 text-sm leading-6 text-body">{item.description}</p>
-                  <span className="mt-4 inline-flex rounded-full bg-accent px-4 py-2 text-sm font-black text-ink">
-                    查看改善方案
-                  </span>
+          {assessments.map((item) => (
+            <a key={item.slug} href={`/assessment/${item.slug}/`} className="group overflow-hidden rounded-3xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <Image src={item.image} alt={`${item.title}体态评估`} width={900} height={620} className="aspect-[16/10] w-full object-cover" />
+              <div className="p-5">
+                <div className="flex flex-wrap gap-2">
+                  {item.tags.map((tag) => <span key={tag} className="rounded-full bg-panel px-3 py-1 text-xs font-bold text-jade">{tag}</span>)}
                 </div>
-              </a>
-            );
-          })}
+                <h2 className="mt-3 text-xl font-black text-ink group-hover:text-jade">{item.title}</h2>
+                <p className="mt-3 line-clamp-3 text-sm leading-6 text-body">{item.summary}</p>
+                <span className="mt-4 inline-flex rounded-full bg-accent px-4 py-2 text-sm font-black text-ink">查看静态评估指南</span>
+              </div>
+            </a>
+          ))}
         </div>
 
-        <div className="mt-10">
-          <CTAWeChat source="体态自测列表" conversionScore={1} />
-        </div>
       </section>
     </main>
   );

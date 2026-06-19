@@ -12,6 +12,7 @@ html {
 
 body {
   margin: 0;
+  padding-bottom: 68px;
   background: #f8fbff;
   color: #102033;
 }

@@ -1,0 +1,855 @@
+{
+  "updatedAt": "2026-06-18",
+  "site": {
+    "siteName": "每日运动解剖分享",
+    "brandName": "体态评估中心",
+    "domain": "https://ai521.net",
+    "canonical": "/",
+    "wechat": "Wi985211DX",
+    "defaultTitle": "每日运动解剖分享｜体态评估与改善训练",
+    "defaultDescription": "提供头前伸、圆肩、骨盆前倾、膝内扣、翼状肩胛和高低肩自测、原因分析与改善训练建议。"
+  },
+  "cta": {
+    "wechatId": "Wi985211DX",
+    "freeKeyword": "体态评估",
+    "productKeyword": "7天训练",
+    "ctaTitle": "7天体态修复训练计划（9.9元）",
+    "ctaDesc": "先进入唯一产品页查看训练内容，再添加微信 Wi985211DX 完成交付。",
+    "buttonText": "领取专属修复方案（9.9）"
+  },
+  "pageSeo": {
+    "assessmentIndex": {
+      "title": "体态评估项目大全",
+      "description": "查看头前伸、圆肩、骨盆前倾、膝内扣、翼状肩胛和高低肩评估方案。",
+      "canonical": "/assessment/",
+      "indexable": true
+    },
+    "resourcesIndex": {
+      "title": "体态改善免费资料",
+      "description": "领取体态自测表、常见问题判断表、入门训练建议和7天入门计划。",
+      "canonical": "/resources/",
+      "indexable": true
+    },
+    "faq": {
+      "title": "体态评估常见问题 FAQ",
+      "description": "解答体态自测、圆肩、头前伸、膝内扣、骨盆前倾、翼状肩胛和训练周期等问题。",
+      "canonical": "/faq/",
+      "indexable": true
+    },
+    "contact": {
+      "title": "联系体态评估老师",
+      "description": "添加微信领取体态自测表、7天训练表、基础动作建议和常见错误提醒。",
+      "canonical": "/contact/",
+      "indexable": true
+    },
+    "selfTest": {
+      "title": "1分钟体态自测｜头前伸圆肩骨盆前倾初步判断",
+      "description": "通过10道体态自测题，初步判断头前伸、圆肩、骨盆前倾、膝内扣、翼状肩胛和高低肩问题方向。",
+      "canonical": "/self-test/",
+      "indexable": true
+    },
+    "selfTestResult": {
+      "title": "体态自测结果｜获取你的问题方向",
+      "description": "查看1分钟体态自测结果，了解主要问题、次要问题和初步改善建议。",
+      "canonical": "/self-test/result/",
+      "indexable": false
+    }
+  },
+  "assessments": [
+    {
+      "slug": "forward-head",
+      "title": "头前伸评估与改善方案",
+      "shortTitle": "头前伸",
+      "problemName": "头部前移、颈肩紧张",
+      "summary": "头前伸不是简单把头往后收就能解决。它通常和长期低头、胸椎僵硬、肩胛控制不足有关。先判断耳朵与肩峰的位置，再逐步恢复颈胸活动和稳定能力。",
+      "image": "/images/problem/forward-head-1.png",
+      "compareImage": "/images/problem/forward-head-comparison-correct.png",
+      "tags": [
+        "肩颈",
+        "久坐",
+        "低头族"
+      ],
+      "featured": true,
+      "symptoms": [
+        "侧面看耳朵明显位于肩膀前方。",
+        "久坐或低头后颈后紧、肩颈酸胀。",
+        "做下巴回收时容易抬头或耸肩。"
+      ],
+      "causes": [
+        "手机和电脑屏幕位置过低。",
+        "胸椎活动不足，上背部长期塌陷。",
+        "深层颈屈肌与肩胛稳定能力下降。"
+      ],
+      "selfTest": [
+        "拍摄自然站立侧面照，观察耳垂是否落在肩峰前方。",
+        "背靠墙站立，观察后脑勺触墙时是否需要抬下巴。",
+        "连续做5次下巴回收，记录颈后紧张和动作控制。"
+      ],
+      "improvements": [
+        {
+          "title": "下巴回收",
+          "description": "视线保持水平，下巴轻轻向后平移，停留3秒。",
+          "image": "/images/problem/forward-head-1.png"
+        },
+        {
+          "title": "胸椎伸展",
+          "description": "利用椅背缓慢打开上背部，避免腰部过度反弓。",
+          "image": "/images/problem/forward-head-2.png"
+        },
+        {
+          "title": "墙面肩胛滑动",
+          "description": "前臂贴墙向上滑动，保持肩膀远离耳朵。",
+          "image": "/images/problem/forward-head-3.png"
+        }
+      ],
+      "mistakes": [
+        "用力把头往后压，造成颈后挤压。",
+        "只拉脖子，不处理胸椎和肩胛。",
+        "训练后继续长时间低头。"
+      ],
+      "sevenDayPlan": [
+        "第1天：拍侧面照并完成基础自测。",
+        "第2天：练习下巴回收和呼吸。",
+        "第3天：加入胸椎伸展。",
+        "第4天：加入墙面肩胛滑动。",
+        "第5天：三个动作各完成2组。",
+        "第6天：调整屏幕高度，减少连续低头。",
+        "第7天：重新拍照并记录颈肩变化。"
+      ],
+      "relatedSlugs": [
+        "rounded-shoulder",
+        "scapular-winging",
+        "high-low-shoulder"
+      ],
+      "seoTitle": "头前伸怎么判断与改善｜自测、原因与7天训练",
+      "seoDescription": "了解头前伸的常见表现、形成原因、自测方法、3个改善动作和7天训练安排。",
+      "canonical": "/assessment/forward-head/"
+    },
+    {
+      "slug": "rounded-shoulder",
+      "title": "圆肩评估与改善方案",
+      "shortTitle": "圆肩",
+      "problemName": "肩膀前扣、含胸",
+      "summary": "圆肩常见于久坐办公、胸前紧张和肩胛控制不足。改善重点不是强行挺胸，而是恢复胸椎活动，让肩胛骨重新获得稳定、顺畅的运动。",
+      "image": "/images/problem/rounded-shoulder-1.png",
+      "compareImage": "/images/problem/rounded-shoulder-comparison-correct.png",
+      "tags": [
+        "肩背",
+        "含胸",
+        "办公族"
+      ],
+      "featured": true,
+      "symptoms": [
+        "自然站立时肩膀向前扣。",
+        "手臂上举时容易耸肩或腰部反弓。",
+        "练背时背部发力感弱，肩前侧容易紧。"
+      ],
+      "causes": [
+        "久坐使胸前组织长期紧张。",
+        "胸椎活动不足。",
+        "肩胛稳定肌群控制能力下降。"
+      ],
+      "selfTest": [
+        "拍摄侧面和背面站姿，观察肩峰是否明显向前。",
+        "背靠墙站立，观察肩膀和手背是否难以接近墙面。",
+        "双臂缓慢上举，观察是否耸肩或腰部反弓。"
+      ],
+      "improvements": [
+        {
+          "title": "门框胸肌伸展",
+          "description": "前臂扶门框，身体缓慢前移，保持肩膀下沉。",
+          "image": "/images/problem/rounded-shoulder-1.png"
+        },
+        {
+          "title": "胸椎旋转",
+          "description": "侧卧屈膝，缓慢打开上侧手臂并配合呼吸。",
+          "image": "/images/problem/rounded-shoulder-2.png"
+        },
+        {
+          "title": "弹力带划船",
+          "description": "先控制肩胛向后下方移动，再屈肘完成划船。",
+          "image": "/images/problem/rounded-shoulder-3.png"
+        }
+      ],
+      "mistakes": [
+        "强行挺胸导致肋骨外翻。",
+        "划船时只用手臂拉。",
+        "胸肌拉伸幅度过大，引起肩前夹挤。"
+      ],
+      "sevenDayPlan": [
+        "第1天：记录侧面和背面站姿。",
+        "第2天：练习门框胸肌伸展。",
+        "第3天：加入胸椎旋转。",
+        "第4天：加入弹力带划船。",
+        "第5天：三个动作各完成2组。",
+        "第6天：调整桌椅和键盘位置。",
+        "第7天：重新完成上举测试。"
+      ],
+      "relatedSlugs": [
+        "forward-head",
+        "scapular-winging",
+        "high-low-shoulder"
+      ],
+      "seoTitle": "圆肩怎么改善｜自测、原因与7天训练方案",
+      "seoDescription": "查看圆肩和含胸的表现、原因、自测方法、3个改善动作和7天训练安排。",
+      "canonical": "/assessment/rounded-shoulder/"
+    },
+    {
+      "slug": "pelvic-tilt",
+      "title": "骨盆前倾评估与改善方案",
+      "shortTitle": "骨盆前倾",
+      "problemName": "腰部前凸、站久腰酸",
+      "summary": "骨盆前倾常和久坐、髋前侧紧张、臀腹控制不足有关。不要只压腰或收腹，先学会控制骨盆，再把臀肌和核心带回日常站立与训练。",
+      "image": "/images/problem/pelvic-tilt-1.png",
+      "compareImage": "/images/problem/pelvic-tilt-comparison-correct.png",
+      "tags": [
+        "腰背",
+        "骨盆",
+        "久坐"
+      ],
+      "featured": true,
+      "symptoms": [
+        "自然站立时腰部前凸明显。",
+        "站久后腰酸，髋前侧容易紧。",
+        "做臀桥时腰先酸、臀部不易发力。"
+      ],
+      "causes": [
+        "久坐使髋屈肌长期处于缩短位置。",
+        "臀肌和核心控制能力不足。",
+        "站立时习惯挺肚子、塌腰。"
+      ],
+      "selfTest": [
+        "拍摄自然站立侧面照，观察腰椎前凸和骨盆角度。",
+        "仰卧屈膝，尝试呼气让腰背轻轻接近地面。",
+        "完成10次臀桥，记录腰部与臀部发力差异。"
+      ],
+      "improvements": [
+        {
+          "title": "半跪髋屈肌伸展",
+          "description": "骨盆轻微后收，身体直立向前移动。",
+          "image": "/images/problem/pelvic-tilt-1.png"
+        },
+        {
+          "title": "骨盆后倾控制",
+          "description": "仰卧屈膝，呼气时轻收下腹并控制腰背。",
+          "image": "/images/problem/pelvic-tilt-2.png"
+        },
+        {
+          "title": "臀桥",
+          "description": "保持肋骨稳定，收紧臀部抬起骨盆。",
+          "image": "/images/problem/pelvic-tilt-3.png"
+        }
+      ],
+      "mistakes": [
+        "伸展髋前侧时继续塌腰。",
+        "臀桥抬得过高，用腰代替臀部。",
+        "只收腹不配合呼吸。"
+      ],
+      "sevenDayPlan": [
+        "第1天：记录侧面站姿和腰部感受。",
+        "第2天：练习髋屈肌伸展。",
+        "第3天：加入骨盆后倾控制。",
+        "第4天：加入臀桥。",
+        "第5天：三个动作各完成2组。",
+        "第6天：减少久坐并增加髋部活动。",
+        "第7天：重新自测并记录站久腰酸变化。"
+      ],
+      "relatedSlugs": [
+        "knee-valgus",
+        "rounded-shoulder",
+        "forward-head"
+      ],
+      "seoTitle": "骨盆前倾怎么判断与改善｜自测和7天训练",
+      "seoDescription": "了解骨盆前倾的表现、原因、自测方法、3个改善动作和7天基础训练。",
+      "canonical": "/assessment/pelvic-tilt/"
+    },
+    {
+      "slug": "knee-valgus",
+      "title": "膝内扣评估与改善方案",
+      "shortTitle": "膝内扣",
+      "problemName": "下蹲膝盖内夹",
+      "summary": "膝内扣不只是膝盖的问题，髋部控制、足弓稳定和踝关节活动都会影响下肢力线。训练时先降低难度，确保膝盖与脚尖方向一致。",
+      "image": "/images/problem/knee-valgus-1.png",
+      "compareImage": "/images/problem/knee-valgus-comparison-correct.png",
+      "tags": [
+        "膝关节",
+        "下肢力线",
+        "深蹲"
+      ],
+      "featured": true,
+      "symptoms": [
+        "下蹲、上楼或落地时膝盖向内偏。",
+        "单腿站立不稳，足弓容易塌。",
+        "跑步或下肢训练后膝前、膝内侧不适。"
+      ],
+      "causes": [
+        "臀中肌和髋外旋控制不足。",
+        "足弓控制差或踝关节活动不足。",
+        "长期重复错误下蹲和跑跳轨迹。"
+      ],
+      "selfTest": [
+        "面对镜子完成5次徒手深蹲。",
+        "单腿站立20秒，观察骨盆、膝盖和足弓。",
+        "从低台阶缓慢下台，记录左右差异。"
+      ],
+      "improvements": [
+        {
+          "title": "弹力带侧向走",
+          "description": "保持膝盖与脚尖同向，小步侧向移动。",
+          "image": "/images/problem/knee-valgus-1.png"
+        },
+        {
+          "title": "足弓短足训练",
+          "description": "脚趾放松，建立前脚掌和脚跟三点支撑。",
+          "image": "/images/problem/knee-valgus-2.png"
+        },
+        {
+          "title": "分腿蹲控制",
+          "description": "缓慢下蹲，保持前膝朝向第二脚趾。",
+          "image": "/images/problem/knee-valgus-3.png"
+        }
+      ],
+      "mistakes": [
+        "只把膝盖强行向外推。",
+        "弹力带阻力过大，身体明显摇晃。",
+        "动作速度太快，没有观察膝盖轨迹。"
+      ],
+      "sevenDayPlan": [
+        "第1天：完成深蹲和单腿站立测试。",
+        "第2天：练习足弓控制。",
+        "第3天：加入弹力带侧向走。",
+        "第4天：加入分腿蹲轨迹训练。",
+        "第5天：三个动作各完成2组。",
+        "第6天：把正确轨迹带入上下楼。",
+        "第7天：重新完成深蹲测试。"
+      ],
+      "relatedSlugs": [
+        "pelvic-tilt",
+        "high-low-shoulder",
+        "rounded-shoulder"
+      ],
+      "seoTitle": "膝内扣怎么改善｜自测、原因与7天训练",
+      "seoDescription": "查看膝内扣的常见表现、原因、自测方法、3个改善动作和7天下肢稳定训练。",
+      "canonical": "/assessment/knee-valgus/"
+    },
+    {
+      "slug": "scapular-winging",
+      "title": "翼状肩胛评估与改善方案",
+      "shortTitle": "翼状肩胛",
+      "problemName": "肩胛骨突出、肩部不稳",
+      "summary": "翼状肩胛常在推墙、俯卧撑和举手时更明显。改善重点是前锯肌、下斜方肌和胸椎活动，而不是用力把肩胛骨夹在一起。",
+      "image": "/images/problem/scapular-winging-1.png",
+      "compareImage": "/images/posture/posture-scapular-winging.png",
+      "tags": [
+        "肩胛",
+        "肩部稳定",
+        "前锯肌"
+      ],
+      "featured": true,
+      "symptoms": [
+        "推墙时肩胛骨内侧缘明显突出。",
+        "举手或俯卧撑时容易耸肩。",
+        "练背时肩胛周围容易疲劳。"
+      ],
+      "causes": [
+        "前锯肌和下斜方肌激活不足。",
+        "胸椎活动受限。",
+        "推、拉和上举时长期耸肩代偿。"
+      ],
+      "selfTest": [
+        "面对墙完成推墙动作，观察肩胛内侧缘。",
+        "缓慢上举双臂，记录左右移动差异。",
+        "完成低强度平板支撑，观察是否出现肩胛塌陷。"
+      ],
+      "improvements": [
+        {
+          "title": "墙面前锯肌推",
+          "description": "前臂贴墙，轻轻将身体推离墙面，避免耸肩。",
+          "image": "/images/problem/scapular-winging-1.png"
+        },
+        {
+          "title": "四点跪姿肩胛推",
+          "description": "保持手肘伸直，让肩胛骨缓慢靠近和分开。",
+          "image": "/images/problem/scapular-winging-2.png"
+        },
+        {
+          "title": "墙面上滑",
+          "description": "前臂贴墙向上滑动，保持肋骨和肩胛稳定。",
+          "image": "/images/problem/scapular-winging-3.png"
+        }
+      ],
+      "mistakes": [
+        "用力夹肩胛骨，限制正常运动。",
+        "动作中耸肩、肋骨外翻。",
+        "出现疼痛或明显无力仍强行训练。"
+      ],
+      "sevenDayPlan": [
+        "第1天：完成推墙和上举观察。",
+        "第2天：练习墙面前锯肌推。",
+        "第3天：加入四点跪姿肩胛推。",
+        "第4天：加入墙面上滑。",
+        "第5天：三个动作各完成2组。",
+        "第6天：在轻量推拉动作中控制肩胛。",
+        "第7天：重新完成推墙测试。"
+      ],
+      "relatedSlugs": [
+        "rounded-shoulder",
+        "forward-head",
+        "high-low-shoulder"
+      ],
+      "seoTitle": "翼状肩胛怎么改善｜自测、原因与训练动作",
+      "seoDescription": "了解翼状肩胛的表现、原因、自测方法、3个肩胛稳定动作和7天训练安排。",
+      "canonical": "/assessment/scapular-winging/"
+    },
+    {
+      "slug": "high-low-shoulder",
+      "title": "高低肩评估与改善方案",
+      "shortTitle": "高低肩",
+      "problemName": "左右肩线不平、单侧颈肩紧",
+      "summary": "高低肩可能来自单侧用力习惯、躯干偏移、骨盆位置或结构差异。先观察站姿和动作中的左右差异，不要直接把较高一侧用力压下去。",
+      "image": "/images/posture/posture-high-low-shoulder.png",
+      "compareImage": "/images/posture/posture-high-low-shoulder.png",
+      "tags": [
+        "肩颈",
+        "左右不平衡",
+        "站姿"
+      ],
+      "featured": true,
+      "symptoms": [
+        "自然站立时左右肩线高度不同。",
+        "背包、打字或训练后单侧颈肩更紧。",
+        "举手时两侧活动范围或肩胛节奏不同。"
+      ],
+      "causes": [
+        "长期单肩背包、单侧鼠标或偏侧站立。",
+        "胸椎、骨盆和躯干存在旋转或侧移。",
+        "左右肩胛稳定与呼吸模式不同。"
+      ],
+      "selfTest": [
+        "拍摄正面和背面自然站姿，比较肩峰高度。",
+        "双臂缓慢上举，观察两侧是否同步。",
+        "单腿站立20秒，观察骨盆和躯干是否偏移。"
+      ],
+      "improvements": [
+        {
+          "title": "靠墙呼吸",
+          "description": "背部靠墙，缓慢呼吸，感受两侧肋骨均匀展开。",
+          "image": "/images/posture/posture-high-low-shoulder.png"
+        },
+        {
+          "title": "单侧胸椎旋转",
+          "description": "在活动受限一侧缓慢旋转，保持骨盆稳定。",
+          "image": "/images/services/service-neck-shoulder.png"
+        },
+        {
+          "title": "墙面肩胛上滑",
+          "description": "双侧前臂贴墙上滑，观察并减少左右代偿。",
+          "image": "/images/services/service-posture-check.png"
+        }
+      ],
+      "mistakes": [
+        "强行把高肩向下压。",
+        "只放松紧的一侧，不检查躯干和骨盆。",
+        "忽略长期单侧使用习惯。"
+      ],
+      "sevenDayPlan": [
+        "第1天：拍正面和背面站姿。",
+        "第2天：练习靠墙呼吸。",
+        "第3天：加入胸椎旋转。",
+        "第4天：加入墙面肩胛上滑。",
+        "第5天：三个动作各完成2组。",
+        "第6天：调整背包、鼠标和站立习惯。",
+        "第7天：重新拍照并比较左右变化。"
+      ],
+      "relatedSlugs": [
+        "forward-head",
+        "rounded-shoulder",
+        "scapular-winging"
+      ],
+      "seoTitle": "高低肩怎么判断与改善｜自测和训练方法",
+      "seoDescription": "了解高低肩的常见表现、原因、自测方法、3个改善动作和7天调整安排。",
+      "canonical": "/assessment/high-low-shoulder/"
+    }
+  ],
+  "products": [
+    {
+      "slug": "9-9-plan",
+      "title": "7天体态修复训练计划",
+      "price": "9.9",
+      "image": "/images/services/service-rehab-training.png",
+      "summary": "每天约10分钟，从自测、活动、激活到稳定训练，帮助你建立一套能坚持的体态改善节奏。",
+      "highlights": [
+        "每天约10分钟",
+        "动作顺序清楚",
+        "附常见错误提醒",
+        "适合零基础跟练"
+      ],
+      "includes": [
+        "7天训练计划表",
+        "每日训练步骤",
+        "常见错误提醒",
+        "体态改善自查表"
+      ],
+      "targetPeople": [
+        "肩颈酸痛人群",
+        "圆肩驼背人群",
+        "骨盆前倾人群",
+        "久坐体态差人群",
+        "不知道如何安排训练的人"
+      ],
+      "deliveryMethod": "添加微信后回复关键词，由人工发送电子资料。",
+      "wechatKeyword": "7天训练",
+      "ctaText": "领取专属修复方案（9.9）",
+      "seoTitle": "7天体态修复训练计划｜9.9元入门方案",
+      "seoDescription": "9.9元获取7天体态修复训练计划，包含每日训练步骤、常见错误提醒和体态自查表。",
+      "canonical": "/product/9-9-plan/"
+    }
+  ],
+  "resources": [
+    {
+      "slug": "posture-starter-pack",
+      "title": "免费体态评估资料包",
+      "summary": "先用简单自测找到问题方向，再根据结果选择入门动作，避免盲目跟练。",
+      "image": "/images/hero/hero-posture-assessment.png",
+      "includes": [
+        "体态自测表",
+        "常见问题判断表",
+        "入门训练建议",
+        "7天入门计划"
+      ],
+      "wechatKeyword": "体态评估",
+      "ctaTitle": "免费领取体态评估资料包",
+      "ctaText": "立即领取资料包",
+      "seoTitle": "免费体态评估资料包｜自测表与7天入门计划",
+      "seoDescription": "免费领取体态自测表、常见问题判断表、入门训练建议和7天入门计划。",
+      "canonical": "/resources/posture-starter-pack/"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "体态自测有没有用？",
+      "answer": "自测适合发现明显的姿势和动作差异，帮助你选择下一步方向，但不能代替医疗诊断。"
+    },
+    {
+      "question": "圆肩和头前伸是什么关系？",
+      "answer": "两者经常同时出现，常和久坐、胸椎活动不足、肩胛控制下降有关，通常需要组合处理。"
+    },
+    {
+      "question": "膝内扣是不是必须训练？",
+      "answer": "如果下蹲、跑跳或上下楼时反复内扣，建议从髋部、足弓和动作轨迹开始训练。若伴随疼痛，应先评估。"
+    },
+    {
+      "question": "骨盆前倾怎么判断？",
+      "answer": "可结合侧面站姿、腰椎前凸、站久腰酸和臀桥发力情况判断，不要只看小腹或臀部外观。"
+    },
+    {
+      "question": "翼状肩胛要不要先治疗？",
+      "answer": "轻度动作控制问题可先从低强度肩胛稳定训练开始。若伴随外伤、明显无力、疼痛或快速加重，应先就医。"
+    },
+    {
+      "question": "训练多久能看到改善？",
+      "answer": "动作感受通常会先变化，外观和稳定性需要按周观察。每天少量坚持，比偶尔高强度训练更可靠。"
+    }
+  ],
+  "selfTest": {
+    "questions": [
+      {
+        "id": "q1",
+        "question": "你平时照镜子或拍照时，头部是否经常向前伸？",
+        "options": [
+          {
+            "label": "很明显",
+            "scores": {
+              "forwardHead": 2
+            }
+          },
+          {
+            "label": "有一点",
+            "scores": {
+              "forwardHead": 1
+            }
+          },
+          {
+            "label": "基本没有",
+            "scores": {}
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "question": "你是否经常出现圆肩、含胸、肩膀往前扣？",
+        "options": [
+          {
+            "label": "很明显",
+            "scores": {
+              "roundedShoulder": 2
+            }
+          },
+          {
+            "label": "偶尔会",
+            "scores": {
+              "roundedShoulder": 1
+            }
+          },
+          {
+            "label": "基本没有",
+            "scores": {}
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "question": "站立时，你是否感觉腰容易塌、肚子容易往前顶？",
+        "options": [
+          {
+            "label": "很明显",
+            "scores": {
+              "pelvicTilt": 2
+            }
+          },
+          {
+            "label": "偶尔有",
+            "scores": {
+              "pelvicTilt": 1
+            }
+          },
+          {
+            "label": "基本没有",
+            "scores": {}
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "question": "下蹲、上楼或跑步时，你的膝盖会不会明显往里扣？",
+        "options": [
+          {
+            "label": "经常会",
+            "scores": {
+              "kneeValgus": 2
+            }
+          },
+          {
+            "label": "偶尔会",
+            "scores": {
+              "kneeValgus": 1
+            }
+          },
+          {
+            "label": "基本不会",
+            "scores": {}
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "question": "你是否经常肩颈酸、脖子紧、低头久了特别累？",
+        "options": [
+          {
+            "label": "经常",
+            "scores": {
+              "forwardHead": 1,
+              "roundedShoulder": 1
+            }
+          },
+          {
+            "label": "偶尔",
+            "scores": {
+              "forwardHead": 1
+            }
+          },
+          {
+            "label": "很少",
+            "scores": {}
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "question": "你平时久坐后，腰酸、臀部没力、站久不舒服吗？",
+        "options": [
+          {
+            "label": "很明显",
+            "scores": {
+              "pelvicTilt": 2
+            }
+          },
+          {
+            "label": "偶尔",
+            "scores": {
+              "pelvicTilt": 1
+            }
+          },
+          {
+            "label": "基本没有",
+            "scores": {}
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "question": "做俯卧撑、平板支撑或举手时，你是否感觉肩胛骨不稳、肩膀容易耸？",
+        "options": [
+          {
+            "label": "经常",
+            "scores": {
+              "scapularWinging": 2,
+              "roundedShoulder": 1
+            }
+          },
+          {
+            "label": "偶尔",
+            "scores": {
+              "scapularWinging": 1
+            }
+          },
+          {
+            "label": "基本没有",
+            "scores": {}
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "question": "你是否发现左右肩膀高低不一样，或者单侧肩颈特别紧？",
+        "options": [
+          {
+            "label": "很明显",
+            "scores": {
+              "highLowShoulder": 2
+            }
+          },
+          {
+            "label": "有一点",
+            "scores": {
+              "highLowShoulder": 1
+            }
+          },
+          {
+            "label": "没有",
+            "scores": {}
+          }
+        ]
+      },
+      {
+        "id": "q9",
+        "question": "你平时走路或站立时，是否觉得腿型不稳、膝盖内夹、脚容易塌？",
+        "options": [
+          {
+            "label": "经常",
+            "scores": {
+              "kneeValgus": 2
+            }
+          },
+          {
+            "label": "偶尔",
+            "scores": {
+              "kneeValgus": 1
+            }
+          },
+          {
+            "label": "基本没有",
+            "scores": {}
+          }
+        ]
+      },
+      {
+        "id": "q10",
+        "question": "你是否长期久坐、低头看手机、电脑办公时间很长？",
+        "options": [
+          {
+            "label": "每天很久",
+            "scores": {
+              "forwardHead": 1,
+              "roundedShoulder": 1,
+              "pelvicTilt": 1
+            }
+          },
+          {
+            "label": "有一些",
+            "scores": {
+              "forwardHead": 1
+            }
+          },
+          {
+            "label": "不多",
+            "scores": {}
+          }
+        ]
+      }
+    ],
+    "results": {
+      "forwardHead": {
+        "name": "头前伸",
+        "title": "你的体态更偏向：头前伸",
+        "symptoms": "脖子向前探、肩颈酸紧、低头久后不适、拍照下巴前顶。",
+        "suggestions": [
+          "改善颈胸活动度",
+          "激活深层颈屈肌",
+          "配合肩胛稳定训练"
+        ],
+        "button": "查看头前伸改善方法",
+        "href": "/assessment/forward-head/"
+      },
+      "roundedShoulder": {
+        "name": "圆肩",
+        "title": "你的体态更偏向：圆肩",
+        "symptoms": "肩膀向前扣、含胸、肩颈紧、上举不顺。",
+        "suggestions": [
+          "胸小肌放松",
+          "胸椎打开",
+          "肩胛后缩与稳定训练"
+        ],
+        "button": "查看圆肩改善方法",
+        "href": "/assessment/rounded-shoulder/"
+      },
+      "pelvicTilt": {
+        "name": "骨盆前倾",
+        "title": "你的体态更偏向：骨盆前倾",
+        "symptoms": "腰容易塌、小肚子前顶、站久腰酸、臀部发力差。",
+        "suggestions": [
+          "改善骨盆控制",
+          "激活臀肌核心",
+          "放松髋屈肌"
+        ],
+        "button": "查看骨盆前倾改善方法",
+        "href": "/assessment/pelvic-tilt/"
+      },
+      "kneeValgus": {
+        "name": "膝内扣",
+        "title": "你的体态更偏向：膝内扣",
+        "symptoms": "下蹲膝盖往里夹、走路站立不稳、下肢力线差。",
+        "suggestions": [
+          "强化臀中肌",
+          "改善髋膝踝力线",
+          "做下肢稳定训练"
+        ],
+        "button": "查看膝内扣改善方法",
+        "href": "/assessment/knee-valgus/"
+      },
+      "scapularWinging": {
+        "name": "翼状肩胛",
+        "title": "你的体态更偏向：翼状肩胛",
+        "symptoms": "肩胛骨边缘突出、举手耸肩、肩部不稳、练背发力差。",
+        "suggestions": [
+          "前锯肌激活",
+          "肩胛控制训练",
+          "改善肩胛协同"
+        ],
+        "button": "查看翼状肩胛改善方法",
+        "href": "/assessment/scapular-winging/"
+      },
+      "highLowShoulder": {
+        "name": "高低肩",
+        "title": "你的体态更偏向：高低肩",
+        "symptoms": "左右肩不平、单侧肩颈更紧、肩线不对称。",
+        "suggestions": [
+          "做肩胛与胸廓平衡训练",
+          "结合站姿照片进一步判断"
+        ],
+        "button": "查看高低肩改善方法",
+        "href": "/assessment/high-low-shoulder/"
+      }
+    }
+  }
+}

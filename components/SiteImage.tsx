@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 
 type SiteImageProps = {
   src?: string;
@@ -13,9 +10,7 @@ type SiteImageProps = {
 };
 
 export default function SiteImage({ src, alt, width, height, className = "", priority = false }: SiteImageProps) {
-  const [failed, setFailed] = useState(!src);
-
-  if (!src || failed) {
+  if (!src) {
     return (
       <div
         className={`flex min-h-48 items-center justify-center rounded-2xl border border-dashed border-line bg-panel p-6 text-center ${className}`}
@@ -40,7 +35,6 @@ export default function SiteImage({ src, alt, width, height, className = "", pri
       height={height}
       priority={priority}
       className={className}
-      onError={() => setFailed(true)}
     />
   );
 }
