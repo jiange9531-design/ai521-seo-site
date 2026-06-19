@@ -62,7 +62,7 @@
       "shortTitle": "头前伸",
       "problemName": "头部前移、颈肩紧张",
       "summary": "头前伸不是简单把头往后收就能解决。它通常和长期低头、胸椎僵硬、肩胛控制不足有关。先判断耳朵与肩峰的位置，再逐步恢复颈胸活动和稳定能力。",
-      "image": "/images/problem/forward-head-1.png",
+      "image": "/images/posture/posture-forward-head.png",
       "compareImage": "/images/problem/forward-head-comparison-correct.png",
       "tags": [
         "肩颈",
@@ -131,7 +131,7 @@
       "shortTitle": "圆肩",
       "problemName": "肩膀前扣、含胸",
       "summary": "圆肩常见于久坐办公、胸前紧张和肩胛控制不足。改善重点不是强行挺胸，而是恢复胸椎活动，让肩胛骨重新获得稳定、顺畅的运动。",
-      "image": "/images/problem/rounded-shoulder-1.png",
+      "image": "/images/entry/entry-problems.png",
       "compareImage": "/images/problem/rounded-shoulder-comparison-correct.png",
       "tags": [
         "肩背",
@@ -200,7 +200,7 @@
       "shortTitle": "骨盆前倾",
       "problemName": "腰部前凸、站久腰酸",
       "summary": "骨盆前倾常和久坐、髋前侧紧张、臀腹控制不足有关。不要只压腰或收腹，先学会控制骨盆，再把臀肌和核心带回日常站立与训练。",
-      "image": "/images/problem/pelvic-tilt-1.png",
+      "image": "/images/posture/posture-pelvic-tilt.png",
       "compareImage": "/images/problem/pelvic-tilt-comparison-correct.png",
       "tags": [
         "腰背",
@@ -269,7 +269,7 @@
       "shortTitle": "膝内扣",
       "problemName": "下蹲膝盖内夹",
       "summary": "膝内扣不只是膝盖的问题，髋部控制、足弓稳定和踝关节活动都会影响下肢力线。训练时先降低难度，确保膝盖与脚尖方向一致。",
-      "image": "/images/problem/knee-valgus-1.png",
+      "image": "/images/posture/posture-knee-valgus.png",
       "compareImage": "/images/problem/knee-valgus-comparison-correct.png",
       "tags": [
         "膝关节",
@@ -338,7 +338,7 @@
       "shortTitle": "翼状肩胛",
       "problemName": "肩胛骨突出、肩部不稳",
       "summary": "翼状肩胛常在推墙、俯卧撑和举手时更明显。改善重点是前锯肌、下斜方肌和胸椎活动，而不是用力把肩胛骨夹在一起。",
-      "image": "/images/problem/scapular-winging-1.png",
+      "image": "/images/posture/posture-rounded-shoulder.png",
       "compareImage": "/images/posture/posture-scapular-winging.png",
       "tags": [
         "肩胛",
@@ -407,7 +407,7 @@
       "shortTitle": "高低肩",
       "problemName": "左右肩线不平、单侧颈肩紧",
       "summary": "高低肩可能来自单侧用力习惯、躯干偏移、骨盆位置或结构差异。先观察站姿和动作中的左右差异，不要直接把较高一侧用力压下去。",
-      "image": "/images/posture/posture-high-low-shoulder.png",
+      "image": "/images/problems/problem-rounded-shoulder.png",
       "compareImage": "/images/posture/posture-high-low-shoulder.png",
       "tags": [
         "肩颈",
