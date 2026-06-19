@@ -23,14 +23,23 @@ export default function AssessmentIndexPage() {
         <p className="mt-4 max-w-3xl text-lg leading-8 text-body">选择最接近你的问题，查看常见表现、形成原因、自查方法和基础改善建议。</p>
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           {[
-            ["01", "看表现", "了解常见姿势与动作表现"],
-            ["02", "看原因", "阅读可能的形成原因与注意事项"],
-            ["03", "看方法", "查看固定自查与改善内容"]
-          ].map(([number, title, text]) => (
-            <div key={number} className="rounded-2xl border border-line bg-white p-4 shadow-sm">
-              <span className="text-xs font-black text-jade">{number}</span>
-              <strong className="mt-1 block text-lg text-ink">{title}</strong>
-              <p className="mt-1 text-sm leading-6 text-body">{text}</p>
+            ["01", "看表现", "了解常见姿势与动作表现", "/images/entry/entry-problems.png"],
+            ["02", "看原因", "阅读可能的形成原因与注意事项", "/images/entry/entry-analysis.png"],
+            ["03", "看方法", "查看固定自查与改善内容", "/images/entry/entry-training.png"]
+          ].map(([number, title, text, image]) => (
+            <div key={number} className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
+              <Image
+                src={image}
+                alt={`${title}体态评估`}
+                width={900}
+                height={620}
+                className="aspect-[16/8] w-full object-cover"
+              />
+              <div className="p-4">
+                <span className="text-xs font-black text-jade">{number}</span>
+                <strong className="mt-1 block text-lg text-ink">{title}</strong>
+                <p className="mt-1 text-sm leading-6 text-body">{text}</p>
+              </div>
             </div>
           ))}
         </div>
